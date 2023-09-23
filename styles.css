@@ -1,1 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@100&family=Roboto:ital,wght@0,300;1,300&display=swap');
+
+
+body {
+    margin: 0%;
+    padding: 0%;
+    background-color: black;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+}
+
+.input {
+    margin: 41px;
+    font-size: 24px;
+    color: white;
+}
+
+#text {
+    height: 29px;
+    background-color: mediumaquamarine;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+}
+
+#delete {
+    height: 22px;
+    float: right;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#text {
+    height: 25px;
+}
+
+
+.cards {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    flex-wrap: wrap;
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+.card1:hover {
+    transform: scale(1.2, 1);
+}
+
+
+.taskBox {
+    height: 40%;
+    width: 67%;
+    border: 2px solid blue;
+}
+
+.taskDetails {
+    width: 80%;
+    border: 2px solid blue;
+    margin: 1px 0px 2px;
+    text-align: center;
+}
+
+
+.hide {
+    display: none;
+}
+
+
+.cardDiv {
+    min-height: 120px;
+    width: 67%;
+    /* border: 2px solid rgb(202, 16, 16); */
+    justify-content: center;
+    margin: 11px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    font-size: 28px;
+    /* color: #4a380d; */
+    font-weight: bold;
+    gap: 10px;
+}
+
+.removeButton {
+    width: 60px;
+    margin: auto;
+    background: red;
+    color: white;
+    border: none;
+    height: 25px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.descriptionbutton {
+    width: 70px;
+    margin: auto;
+    background: red;
+    color: white;
+    border: none;
+    height: 25px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.card1 {
+    min-height: 320px;
+    width: 20%;
+    border-radius: 20px;
+    margin: 20px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    /* color: blue; */
+    border: 3px solid blue;
+}
+
+.card1:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.card1:active {
+    color: #000
+}
+
+.card1:active:after {
+    background: transparent;
+}
+
+.card1:hover:before {
+    opacity: 1;
+}
+
+.card1:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+
+.glow-on-hover {
+    width: 120px;
+    height: 40px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+
+.textContainer {
+    display: none;
+}
+
+.textarea {
+    height: 100px;
+    width: 600px;
+    border-radius: 9px;
+    background: darkkhaki;
+    font-size: 20px;
+    color: white;
+}
+
+.descriptionDiv {
+    font-size: 20px;
+    font-weight: lighter;
+    word-break: break-all;
+
+}
+
+
+.bounce {
+    font-size: 2rem;
+    width: 68%;
+    margin: 2rem auto;
+    -webkit-box-reflect: below -20px linear-gradient(transparent, #211e1e2e);
+    letter-spacing: -3px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.bounce span {
+    display: inline-flex;
+    color:aqua;
+    font-family: "Play", sans-serif;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%,
+    50%,
+    100% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-20px);
+    }
+}
+
+.ten span:nth-of-type(1) {
+    animation-delay: 0.1s;
+}
+.ten span:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+.ten span:nth-of-type(3) {
+    animation-delay: 0.3s;
+}
+.ten span:nth-of-type(4) {
+    animation-delay: 0.4s;
+}
+.ten span:nth-of-type(5) {
+    animation-delay: 0.5s;
+}
+.ten span:nth-of-type(6) {
+    animation-delay: 0.6s;
+}
+
+.ten span:nth-of-type(7) {
+    animation-delay: 0.7s;
+}
+.ten span:nth-of-type(8) {
+    animation-delay: 0.8s;
+}
+.ten span:nth-of-type(9) {
+    animation-delay: 0.9s;
+}
+.ten span:nth-of-type(10) {
+    animation-delay: 1s;
+}
+
+
+::placeholder{
+    color: rgb(244, 244, 244);
+}
 
