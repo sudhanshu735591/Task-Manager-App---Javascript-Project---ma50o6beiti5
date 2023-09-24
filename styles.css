@@ -52,13 +52,7 @@ body {
     width: 90%;
     flex-wrap: wrap;
     text-align: center;
-    text-decoration: underline;
 }
-
-
-
-
-
 
 .card1:hover {
     transform: scale(1.2, 1);
@@ -281,7 +275,7 @@ body {
     font-size: 20px;
     font-weight: lighter;
     word-break: break-all;
-
+    font-family: cursive;
 }
 
 
@@ -350,3 +344,17 @@ body {
     color: rgb(244, 244, 244);
 }
 
+
+footer{
+    margin :50px;
+}
+
+
+.copyright{
+    font-size: 20px;
+}
+
+.c{
+    font-size: 20px;
+    color: yellow;
+}
