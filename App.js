@@ -177,6 +177,7 @@ button.addEventListener("click", () => {
                     totalTask[i].description = textarea.value;
                 }
             }
+            document.getElementById("textContainer").style.display = "none";
             openTaskRender();
         })
     }
