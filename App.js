@@ -7,6 +7,27 @@ var inProgress;
 var inReview;
 var doneTask;
 
+document.querySelectorAll(".cards>div").forEach((value)=>{
+    value.addEventListener("mouseover", function(){
+        if(this.id==="openCard"){
+            document.getElementById("showText").textContent = "Open";
+        }
+
+        else if(this.id==="in_progress"){
+            document.getElementById("showText").textContent = "Progress";
+        }
+
+        else if(this.id==="review"){
+            document.getElementById("showText").textContent = "Review";
+        }
+        else{
+            document.getElementById("showText").textContent = "Done";
+        }
+    })
+})
+
+
+
 function dataFilter(){
     opentask = totalTask.filter((obj)=>obj.taskType==="open");
     inProgress = totalTask.filter((obj)=>obj.taskType==="progress");
@@ -21,6 +42,8 @@ var review = document.getElementById("review");
 var done = document.getElementById("done");
 var dragstartId = null;
 var globalId;
+
+
 
 function openTaskRender(){
     openCard.textContent = "";
