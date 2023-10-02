@@ -55,7 +55,8 @@ body {
 }
 
 .card1:hover {
-    transform: scale(1.2, 1);
+    /* transform: scale(1.2, 1); */
+    border-color: gold;
 }
 
 

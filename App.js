@@ -34,6 +34,7 @@ function dataFilter(){
     inReview = totalTask.filter((obj)=>obj.taskType==="in-review");
     doneTask = totalTask.filter((obj)=>obj.taskType==="done");
 }
+
 dataFilter();
 
 var openCard = document.getElementById("openCard");
@@ -44,10 +45,9 @@ var dragstartId = null;
 var globalId;
 
 
-
 function openTaskRender(){
     openCard.textContent = "";
-    opentask.forEach((val, index)=>{    
+    opentask.forEach((val, index)=>{  
         var newElement = document.createElement("div");
         newElement.className = "cardDiv";
         newElement.id = val.id;
@@ -55,14 +55,14 @@ function openTaskRender(){
         newElement.draggable = true;
         openCard.appendChild(newElement);
         newElement.textContent = val.taskname;
-        let textContainer = document.getElementById("textContainer");
         var deleteButton = document.createElement("button");
         deleteButton.className = "removeButton";
-        deleteButton.textContent = "Delete";
+        deleteButton.textContent = "Delete"
         newElement.appendChild(deleteButton);
+        let textContainer = document.getElementById("textContainer");
         var descriptionButton = document.createElement("button");
         descriptionButton.className = "descriptionbutton";
-        descriptionButton.textContent = "Add Text";
+        descriptionButton.textContent = "Add Description";
         newElement.appendChild(descriptionButton);
         newElement.addEventListener("dragstart", (e)=>{
             dragstartId = e.target.id;
@@ -88,6 +88,7 @@ function openTaskRender(){
 }
 
 openTaskRender();
+
 
 function progressTaskRender(){
     progress.textContent = "";
@@ -266,6 +267,7 @@ function doneDetails(){
     done.addEventListener("dragover", (e)=>{
         e.preventDefault();
     });
+
     done.addEventListener("drop", (e)=>{
         e.preventDefault();
         if(e.target.id==="done"){
@@ -276,6 +278,7 @@ function doneDetails(){
                     break;
                 }
             }
+
             dataFilter();
             openTaskRender();
             progressTaskRender();
