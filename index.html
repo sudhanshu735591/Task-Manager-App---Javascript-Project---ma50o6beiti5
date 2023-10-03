@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager app</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
     <div class="container">
         <div class="inputSection">
@@ -25,23 +27,40 @@
 
 
 
-        <div class="showText" id="showText">Open</div>
 
         <div class="cards">
-            <div class="card1" id="openCard"></div>
-            <div class="card1" id="in_progress"></div>
-            <div class="card1" id="review"></div>
-            <div class="card1" id="done"></div>
+
+            <div class="card1">
+                <h1>Open</h1>
+                <div id="openCard"></div>
+            </div>
+
+            <div class="card1">
+                <h1>Progress</h1>
+                <div id="in_progress"></div>
+            </div>
+
+
+            <div class="card1">
+                <h1>Review</h1>
+                <div id="review"></div>
+            </div>
+
+            <div class="card1">
+                <h1>Done</h1>
+                <div id="done"></div>
+            </div>
         </div>
 
-      
+
         <div class="textContainer" id="textContainer">
             <textarea id="textarea" class="textarea" placeholder="Please Enter Description"></textarea><br>
             <button id="textSubmit" class="glow-on-hover">Submit</button>
         </div>
 
         <footer>
-            <div class="copyright">By:- Sudhanshu Shekhar Srivastava <span class="c">©</span> 2023 All right Reserved.</div>
+            <div class="copyright">By:- Sudhanshu Shekhar Srivastava <span class="c">©</span> 2023 All right Reserved.
+            </div>
         </footer>
     </div>
 
@@ -50,6 +69,5 @@
 
     <script src="./App.js"></script>
 </body>
+
 </html>
-
-

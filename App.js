@@ -1,30 +1,15 @@
 var inputId = document.getElementById("text");
 var button = document.getElementById("submit");
+let textarea = document.getElementById("textarea");
+let newTextArea;
+
+let textSubmit = document.getElementById("textSubmit");
 
 let totalTask =  [];
 var opentask;
 var inProgress;
 var inReview;
 var doneTask;
-
-document.querySelectorAll(".cards>div").forEach((value)=>{
-    value.addEventListener("mouseover", function(){
-        if(this.id==="openCard"){
-            document.getElementById("showText").textContent = "Open";
-        }
-
-        else if(this.id==="in_progress"){
-            document.getElementById("showText").textContent = "Progress";
-        }
-
-        else if(this.id==="review"){
-            document.getElementById("showText").textContent = "Review";
-        }
-        else{
-            document.getElementById("showText").textContent = "Done";
-        }
-    })
-})
 
 
 
@@ -34,7 +19,6 @@ function dataFilter(){
     inReview = totalTask.filter((obj)=>obj.taskType==="in-review");
     doneTask = totalTask.filter((obj)=>obj.taskType==="done");
 }
-
 dataFilter();
 
 var openCard = document.getElementById("openCard");
@@ -43,6 +27,7 @@ var review = document.getElementById("review");
 var done = document.getElementById("done");
 var dragstartId = null;
 var globalId;
+var descriptionId;
 
 
 function openTaskRender(){
@@ -73,21 +58,34 @@ function openTaskRender(){
             dataFilter();
             openTaskRender();
         });
+
         let descriptionDiv = document.createElement("div");
         descriptionDiv.className = "descriptionDiv";
 
-        descriptionDiv.textContent = val.description;
+        for(let i = 0; i<opentask.length; i++){
+            if(opentask[i].id===globalId){
+                descriptionDiv.textContent = val.description;
+            }
+        }
+        
         newElement.appendChild(descriptionDiv);
         descriptionButton.addEventListener("click", ()=>{
+            console.log(index, descriptionDiv);
+            descriptionId = index; 
+
+
+         
             textContainer.style.display = "block";
-        })
-        if (descriptionDiv.scrollWidth > newElement.clientWidth || descriptionDiv.scrollHeight > newElement.clientHeight) {
-            descriptionDiv.style.overflow = "scroll";
-        }          
+        })    
     })
 }
 
-openTaskRender();
+document.getElementById("textSubmit").addEventListener("click", ()=>{
+    opentask[descriptionId].description = textarea.value;
+
+    console.log(opentask[descriptionId],"-----");
+})
+// openTaskRender();
 
 
 function progressTaskRender(){
@@ -118,6 +116,7 @@ function progressTaskRender(){
         newElement.appendChild(descriptionDiv);
     });
 }
+progressTaskRender();
 
 function reviewTaskRender(){
     review.textContent = ""; 
@@ -149,7 +148,7 @@ function reviewTaskRender(){
     })
 }
 
-
+reviewTaskRender();
 
 function doneTaskRender(){
     done.textContent = ""; 
@@ -184,28 +183,22 @@ function doneTaskRender(){
 
 doneTaskRender();
 
+
+textSubmit.addEventListener("click", ()=>{
+    newTextArea = textarea.value;
+    openTaskRender();
+    console.log("----", newTextArea);
+})
+
 button.addEventListener("click", () => {
     let id = "abc"+ Math.floor(Math.random()*100)+"cd"+Math.floor(Math.random()*100);
     let obj = {
         taskname:inputId.value,
-        description:checkClick(),
+        description:"",
         taskType:"open",
         id:id,
     };
-    function checkClick(){
-        let textarea  = document.getElementById("textarea");
-        let textSubmit = document.getElementById("textSubmit");
-        textSubmit.addEventListener("click", ()=>{
-            for(let i = 0; i<totalTask.length; i++){
-                if(totalTask[i].id===globalId){
-                    totalTask[i].description = textarea.value;
-                }
-            }
-            document.getElementById("textContainer").style.display = "none";
-            openTaskRender();
-        })
-    }
-    checkClick();
+    
     totalTask.push(obj);
     dataFilter();
     openTaskRender();
