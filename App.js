@@ -81,7 +81,6 @@ function openTaskRender(){
 document.getElementById("textSubmit").addEventListener("click", (e)=>{
     opentask[descriptionId].description = textarea.value;
     document.getElementById("textarea").value = "";
-
     openTaskRender();
 });
 
@@ -178,13 +177,8 @@ function doneTaskRender(){
         newElement.appendChild(descriptionDiv);
     })
 }
-
 doneTaskRender();
 
-
-// textSubmit.addEventListener("click", ()=>{
-//     newTextArea = textarea.value;
-// })
 
 button.addEventListener("click", () => {
     let id = "abc"+ Math.floor(Math.random()*100)+"cd"+Math.floor(Math.random()*100);
@@ -194,14 +188,12 @@ button.addEventListener("click", () => {
         taskType:"open",
         id:id,
     };
-    
     totalTask.push(obj);
     dataFilter();
     openTaskRender();
     progressTaskRender();
     reviewTaskRender();
     doneTaskRender();
-
     inputId.value="";
 });
 
@@ -226,7 +218,6 @@ function progressDetails(){
         }   
     });
 }
-
 progressDetails(); 
 
 function reviewDetails(){
@@ -269,7 +260,6 @@ function doneDetails(){
                     break;
                 }
             }
-
             dataFilter();
             openTaskRender();
             progressTaskRender();
@@ -295,31 +285,5 @@ doneDetails();
 
 
 
-
-// virtual dom
-
-
-// re-concilation
-
-
-// state are mutable or immutable
-
-
-// why we should not update state directly ?
-
-
-// is updating state are sync or async ?
-
-
-// how react update the state and show the updated value in ui ?
-
-
-// what is reac-fiber ?
-
-
-// what is differ algo ?
-
-
-// how many dom react maintain at the time of state update ?
 
 
