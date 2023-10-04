@@ -79,25 +79,25 @@ body {
 }
 
 #in_progress{
-    width: 100%;
-    min-height: 275px;
+    height: 260px;
+    overflow: auto;
 }
 
 #review{
     width: 100%;
-    min-height: 275px;
+    height: 260px;
 }
 
 #done{
     width: 100%;
-    min-height: 275px;
+    height: 260px;
+
 }
 
 
 .cardDiv {
     min-height: 120px;
     width: 67%;
-    /* border: 2px solid rgb(202, 16, 16); */
     justify-content: center;
     margin: 11px auto;
     text-align: center;
@@ -105,9 +105,7 @@ body {
     flex-direction: column;
     border-radius: 10px;
     font-size: 28px;
-    /* color: #4a380d; */
     font-weight: bold;
-    gap: 10px;
 }
 
 .removeButton {

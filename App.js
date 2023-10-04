@@ -69,23 +69,21 @@ function openTaskRender(){
         }
         
         newElement.appendChild(descriptionDiv);
+
         descriptionButton.addEventListener("click", ()=>{
             console.log(index, descriptionDiv);
-            descriptionId = index; 
-
-
-         
+            descriptionId = index;          
             textContainer.style.display = "block";
         })    
     })
 }
 
-document.getElementById("textSubmit").addEventListener("click", ()=>{
+document.getElementById("textSubmit").addEventListener("click", (e)=>{
     opentask[descriptionId].description = textarea.value;
+    document.getElementById("textarea").value = "";
 
-    console.log(opentask[descriptionId],"-----");
-})
-// openTaskRender();
+    openTaskRender();
+});
 
 
 function progressTaskRender(){
@@ -184,11 +182,9 @@ function doneTaskRender(){
 doneTaskRender();
 
 
-textSubmit.addEventListener("click", ()=>{
-    newTextArea = textarea.value;
-    openTaskRender();
-    console.log("----", newTextArea);
-})
+// textSubmit.addEventListener("click", ()=>{
+//     newTextArea = textarea.value;
+// })
 
 button.addEventListener("click", () => {
     let id = "abc"+ Math.floor(Math.random()*100)+"cd"+Math.floor(Math.random()*100);
@@ -205,6 +201,8 @@ button.addEventListener("click", () => {
     progressTaskRender();
     reviewTaskRender();
     doneTaskRender();
+
+    inputId.value="";
 });
 
 function progressDetails(){    
