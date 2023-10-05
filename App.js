@@ -199,6 +199,7 @@ button.addEventListener("click", () => {
 
 function progressDetails(){    
     progress.addEventListener("dragover", (e)=>{
+        console.log("dragover");
         e.preventDefault();
     })
     progress.addEventListener("drop", (e)=>{
